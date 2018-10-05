@@ -1,14 +1,14 @@
 ---
 applications:
 - name: shopizer-sm-shop
-  path: ./sm-shop/target/shopizer-sm-shop-2.2.0-SNAPSHOT.war
+  path: /sm-shop/target/ROOT.war
   routes:
-  - route: sshopizer-sm-shop.cfapps.io
+  - route: shopizer-sm-shop.cfapps.io
   instances: 1
   services:
   - eshop-db
   env:
-    DATABASE_URL: mysql://b1f3f23d95094e:63fb4813@us-cdbr-iron-east-01.cleardb.net:3306/ad_67edd969496a40a?reconnect=true
+    DATABASE_URL: mysql://b3d55b8c968789:e031ea02@us-cdbr-iron-east-01.cleardb.net:3306/ad_c00625718a6dd86?reconnect=true
     authToken.header: Authorization
     config.cms.files.location: ./files/repos
     config.cms.store.location: ./files/store
@@ -17,10 +17,10 @@ applications:
     db.jdbcUrl:
     db.maxPoolSize: 8
     db.minPoolSize: 2
-    db.username: user
-    db.password: user
+    db.username: 
+    db.password: 
     db.preferredTestQuery: SELECT 1
-    db.schema: ad_67edd969496a40a
+    db.schema: ad_c00625718a6dd86
     elasticsearch.cluster.name: shopizer
     elasticsearch.mode: remote
     elasticsearch.server.host: http://thorin-us-east-1.searchly.com
@@ -45,4 +45,4 @@ applications:
     password: test
     secretKey: 7070200000000007
     shippingDistancePreProcessor.apiKey: 12345678
-    spring.jpa.hibernate.ddl-auto: create-drop
+    spring.jpa.hibernate.ddl-auto: create

@@ -1,4 +1,4 @@
-package com.shoppingcart.shoppingservice.constant;
+/*package com.shoppingcart.shoppingservice.constant;
 
 public class Constants {
 	
@@ -26,3 +26,4 @@ public class Constants {
     public static final String DB_SCHEMA_NAME = "SALESMANAGER";
 
 }
+*/

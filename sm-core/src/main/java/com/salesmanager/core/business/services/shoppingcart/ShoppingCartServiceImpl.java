@@ -56,6 +56,7 @@ public class ShoppingCartServiceImpl extends SalesManagerEntityServiceImpl<Long,
 	private ProductAttributeService productAttributeService;
 	
 
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(ShoppingCartServiceImpl.class);
 
 	@Inject
@@ -166,6 +167,8 @@ public class ShoppingCartServiceImpl extends SalesManagerEntityServiceImpl<Long,
 	 * cart prices and items based on the actual inventory. This method will
 	 * remove the shopping cart if no items are attached.
 	 * <prop key="POPULATE_TEST_DATA">false</prop
+	 * 
+https://shoppingcart-service.cfapps.io
 	 */
 	@Override
 	@Transactional
@@ -173,7 +176,7 @@ public class ShoppingCartServiceImpl extends SalesManagerEntityServiceImpl<Long,
 		
 		try {
 			RestTemplate resttemplate = new RestTemplate();
-			String uri = "http://localhost:8081/shoppingcart/"+store.getId().intValue()+"/"+code;
+			String uri = "https://shoppingcart-service.cfapps.io/shoppingcart/"+store.getId().intValue()+"/"+code;
 					
 			LOGGER.info("+++++++++++++ Calling Shooping cart service uri:- "+uri);
 			ResponseEntity<ShoppingCart> res = resttemplate.getForEntity(uri, ShoppingCart.class );
